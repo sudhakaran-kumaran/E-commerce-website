@@ -1,31 +1,33 @@
 let initialProducts = [
   {
     id: 1,
-    title: "English Willow Grade 1 Cricket Bat",
-    description: "Grade 1 is the best looking blade",
-    price: 4549,
-    thumbnail: "https://www.cricketequipmentusa.com/content/images/thumbs/0003761_cricket-bat-english-willow-ss-ton-orange-by-sunridges.jpeg",
+    title: "iPhone 9",
+    description: "An apple mobile which is nothing like apple",
+    price: 549,
+    thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
   },
   {
     id: 2,
-    title: "White Full Sleve",
-    description: "Cricket Full Sleeves Shirt is great for cricket players",
-    price: 750,
-    thumbnail: "https://www.bestsoccerbuys.com/content/images/thumbs/0001412_cricket-whites-shirts-34-long-sleeves-cricket-jersey.jpeg",
+    title: "iPhone X",
+    description:
+      "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    price: 899,
+    thumbnail: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
   },
   {
     id: 3,
-    title: "Cricket Pads",
-    description: "Comformtable cricket batting pads",
-    price: 2500,
-    thumbnail: "https://www.cricketequipmentusa.com/content/images/thumbs/0003815_cricket-batting-pads-cambridge-s-lite-4-by-ss-sunridges.jpeg",
+    title: "Samsung Universe 9",
+    description:
+      "Samsung's new variant which goes beyond Galaxy to the Universe",
+    price: 1249,
+    thumbnail: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
   },
   {
     id: 4,
-    title: "Cricket Kit Bag",
-    description: "Good design and flexible to use",
-    price: 2800,
-    thumbnail: "https://5.imimg.com/data5/RH/JI/MY-28047981/224-500x500.jpg",
+    title: "OPPOF19",
+    description: "OPPO F19 is officially announced on April 2021.",
+    price: 280,
+    thumbnail: "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
   },
 ];
 
@@ -66,10 +68,10 @@ window.addEventListener("load", () => {
   if (location.pathname === "/adminhomepage.html") {
     loadAdminHomePage();
   }
-  if(location.pathname === "/cart.html"){
+  if (location.pathname === "/cart.html") {
     loadCartPage();
   }
-  if(location.pathname === "/orders.html"){
+  if (location.pathname === "/orders.html") {
     loadOrderPage();
   }
 });
