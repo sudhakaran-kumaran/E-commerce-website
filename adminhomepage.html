@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shopup.orders</title>
+    <title>shopup.homeadmin</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,12 +15,13 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="adminhomepage.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-danger">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/users/home.html">Shopup</a>
+        <a class="navbar-brand" href="">Shopup</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,30 +39,61 @@
               class="nav-link active"
               aria-current="page"
               href="/users/cart.html"
-              >Cart</a
+            ></a>
+            <a class="nav-link" href="addtoproduct.html"
+              >Added Products</a
             >
-            <a class="nav-link" href="/users/home.html"></a>
-            <a class="nav-link" href="/users/login.html">Logout</a>
+            
             <a class="nav-link disabled" aria-disabled="true"></a>
           </div>
         </div>
       </div>
-    </nav>
-    <div class="container my-5">
-      <p class="fs-1">Orders</p>
 
+      <!-- <p class="text-center fs-2 text-success">WELCOME ADMIN</p> -->
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="adminhomepage.html"
+          >Shopup</a
+        >
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <div class="d-flex" role="search">
+            <a class="btn text-white me-2" href="addtoproduct.html"
+              >Orders</a
+            >
+            <a class="btn text-white" onclick="userSignOutHandler()" href="adminlogin.html">
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar ends here -->
+    <div class="container my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-4"><p class="fs-1">Welcome Admin</p></div>
+          <div class="col-6"></div>
+          <div class="col-2 text-end mt-3">
+            <a class="btn btn-primary" href="addtoproduct.html">Add</a>
+          </div>
+        </div>
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Order Id</th>
-            <th scope="col">Date</th>
-            <th scope="col">Products</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
             <th scope="col">Price</th>
-            <th scope="col">Status</th>
+            <th scope="col" class="text-center">Action</th>
           </tr>
         </thead>
-        <tbody id="table"></tbody>
+        <tbody id="productsTableBody"></tbody>
       </table>
     </div>
+    <!-- <img src="/users/images/" alt="" srcset=""> -->
   </body>
 </html>
+
+<!-- <img src="/users/login.html" alt=""> -->

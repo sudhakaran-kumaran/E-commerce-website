@@ -4,28 +4,28 @@ let initialProducts = [
     title: "English Willow Grade 1 Cricket Bat",
     description: "Grade 1 is the best looking blade",
     price: 4549,
-    thumbnail: "images/Screenshot 2023-10-02 222140.png",
+    thumbnail: "https://www.cricketequipmentusa.com/content/images/thumbs/0003761_cricket-bat-english-willow-ss-ton-orange-by-sunridges.jpeg",
   },
   {
     id: 2,
     title: "White Full Sleve",
     description: "Cricket Full Sleeves Shirt is great for cricket players",
     price: 750,
-    thumbnail: "images/whites.png",
+    thumbnail: "https://www.bestsoccerbuys.com/content/images/thumbs/0001412_cricket-whites-shirts-34-long-sleeves-cricket-jersey.jpeg",
   },
   {
     id: 3,
     title: "Cricket Pads",
     description: "Comformtable cricket batting pads",
     price: 2500,
-    thumbnail: "images/padds.png",
+    thumbnail: "https://www.cricketequipmentusa.com/content/images/thumbs/0003815_cricket-batting-pads-cambridge-s-lite-4-by-ss-sunridges.jpeg",
   },
   {
     id: 4,
     title: "Cricket Kit Bag",
     description: "Good design and flexible to use",
     price: 2800,
-    thumbnail: "images/kitbag.png",
+    thumbnail: "https://5.imimg.com/data5/RH/JI/MY-28047981/224-500x500.jpg",
   },
 ];
 
@@ -60,16 +60,16 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users1));
   }
-  if (location.pathname === "/users/home.html") {
+  if (location.pathname === "/home.html") {
     loadCustomerProducts();
   }
-  if (location.pathname === "/Admin/adminhomepage.html") {
+  if (location.pathname === "/adminhomepage.html") {
     loadAdminHomePage();
   }
-  if(location.pathname === "/users/cart.html"){
+  if(location.pathname === "/cart.html"){
     loadCartPage();
   }
-  if(location.pathname === "/users/orders.html"){
+  if(location.pathname === "/orders.html"){
     loadOrderPage();
   }
 });
@@ -100,7 +100,7 @@ const loginhandler = () => {
     errorRef.innerText = "Invalid Credentials";
   } else if (loggedinuser) {
     sessionStorage.setItem("id", loggedinuser.id);
-    location.replace("/users/home.html");
+    location.replace("home.html");
   }
 };
 
@@ -136,7 +136,7 @@ const RegisterHandler = () => {
   localStorage.setItem("users", JSON.stringify(user1));
 
   sessionStorage.setItem("id", user1.id);
-  location.replace("/users/login.html");
+  location.replace("login.html");
 };
 const getRandomNumber = (max = 1000) => {
   return Math.floor(Math.random() * max);
@@ -184,7 +184,7 @@ const adminlogin = () => {
     erroradmin.innerText = "Invalid Crediantials";
   } else if (loggedinadmin) {
     sessionStorage.setItem("id", adminlogin.id);
-    location.replace("/Admin/adminhomepage.html");
+    location.replace("adminhomepage.html");
   }
 };
 
@@ -332,7 +332,7 @@ const addproducthandler = (id) => {
     thumbnail: imageRef.value,
   });
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "/Admin/adminhomepage.html";
+  location.href = "adminhomepage.html";
   //console.log("click");
 };
 const loadCartPage = () => {
@@ -371,7 +371,7 @@ const loadCartPage = () => {
       cartTableRef.innerHTML = body;
       totalRef.innerText = `Total - ₹ ${total}`;
     } else {
-      location.href = "/users/cart.html";
+      location.href = "cart.html";
     }
   }
 };
@@ -398,12 +398,12 @@ const checkOutHandler = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "/users/home.html";
+      location.href = "home.html";
     } else {
-      location.href = "/users/home.html";
+      location.href = "home.html";
     }
   } else {
-    location.href = "/users/login.html";
+    location.href = "login.html";
   }
 };
 const loadOrderPage = () => {
@@ -438,10 +438,10 @@ const loadOrderPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "/users/home.html";
+      location.href = "home.html";
     }
   } else {
-    location.href = "/users/login.html";
+    location.href = "login.html";
   }
 };
 const updateCartCount = () => {
@@ -460,5 +460,5 @@ const updateCartCount = () => {
         cartCountRef.innerText = `Cart - ${cartCount}`;
       } else cartCountRef.innerText = `Cart`;
     }
-  } else location.href = "/pages/login.html";
+  } else location.href = "login.html";
 };
