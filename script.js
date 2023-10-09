@@ -380,6 +380,8 @@ const loadCartPage = () => {
   }
 };
 
+loadCartPage();
+
 const checkOutHandler = () => {
   if (sessionStorage.getItem("userId")) {
     if (localStorage.getItem("cart")) {
