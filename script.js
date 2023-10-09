@@ -209,7 +209,7 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
-
+loadCustomerProducts();
 
 const addToCartHandler = (id) => {
   let products = JSON.parse(localStorage.getItem("products"));
@@ -300,7 +300,9 @@ const loadAdminHomePage = () => {
     </td>
   </tr>`;
   }
-  productsRef.innerHTML = body;
+  if (productsRef) {
+    productsRef.innerHTML = body;
+  }
 };
 
 const deleteProductHandler = (id) => {
