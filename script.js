@@ -209,6 +209,8 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
+loadCustomerProducts();
+
 const addToCartHandler = (id) => {
   let products = JSON.parse(localStorage.getItem("products"));
   const product = products.find((product) => product.id === parseInt(id));
