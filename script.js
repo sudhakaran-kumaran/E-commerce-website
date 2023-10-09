@@ -380,7 +380,7 @@ const loadCartPage = () => {
   }
 };
 
-loadCartPage();
+//loadCartPage();
 
 const checkOutHandler = () => {
   if (sessionStorage.getItem("userId")) {
