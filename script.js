@@ -256,6 +256,7 @@ const loadAdminHomePage = () => {
   }
   productsRef.innerHTML = body;
 };
+loadAdminHomePage();
 
 const deleteProductHandler = (id) => {
   const products = JSON.parse(localStorage.getItem("products"));
