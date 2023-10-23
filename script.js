@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
   if (location.pathname === "/home.html") {
     loadCustomerProducts();
   }
-  if (location.pathname === "/adminhomepage.html") {
+  if (location.pathname === "/E-commerce-website/adminhomepage.html") {
     loadAdminHomePage();
   }
   if (location.pathname === "/cart.html") {
