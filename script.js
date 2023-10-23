@@ -89,9 +89,6 @@ const loginhandler = () => {
     return;
   }
 
-  // if (!passwordRef.value.length < 3) {
-  //   errorRef.innerText = "Invalid Password";
-  // }
   const user = JSON.parse(localStorage.getItem("users"));
 
   const loggedinuser = user.find(
@@ -156,16 +153,7 @@ const getRandomId = (type = "users") => {
     }
   }
 };
-// const RegisterHandler = () => {
-//   location.replace("/login.html");
-// };
 
-// const admindetails = [
-//   {
-//     email: "abc@admin.com",
-//     password: "admin",
-//   },
-// ];
 const adminlogin = () => {
   const adminmail = document.getElementById("typeEmailX");
   const adminpasswrd = document.getElementById("typePasswordX");
@@ -209,7 +197,7 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
-loadCustomerProducts();
+// loadCustomerProducts();
 
 const addToCartHandler = (id) => {
   let products = JSON.parse(localStorage.getItem("products"));
@@ -243,40 +231,6 @@ const addToCartHandler = (id) => {
   }
 };
 
-// const addToCartHandler = (id) => {
-//   let products = JSON.parse(localStorage.getItem("products"));
-//   const product = products.find((product) => product.id === parseInt(id));
-
-//   if (!sessionStorage.getItem("id")) {
-//     location.href = "";
-//   } else {
-//     let userId = parseInt(sessionStorage.getItem("id"));
-//     let cart = [];
-//     if (localStorage.getItem("cart")) {
-//       cart = JSON.parse(localStorage.getItem("cart"));
-//     }
-//     const cartProduct = cart.find(
-//       (c) => c.userId === parseInt(userId) && c.id === parseInt(id)
-//     );
-//     if (cartProduct) {
-//       cart = cart.map((c) => {
-//         if (c.id === parseInt(id) && c.userId === parseInt(userId)) {
-//           return { ...c, count: c.count + 1 };
-//         }
-//          else {
-//           return c;
-//         }
-//       });
-//     } else {
-//       cart.push({ userId: parseInt(id), count: 1, ...product });
-//     }
-
-//     localStorage.setItem("cart", JSON.stringify(cart));
-
-//   }
-//   //console.log("clicked");
-// };
-
 const loadAdminHomePage = () => {
   const productsRef = document.getElementById("productsTableBody");
   const products = JSON.parse(localStorage.getItem("products"));
@@ -284,9 +238,9 @@ const loadAdminHomePage = () => {
 
   for (let product of products) {
     body += `<tr>
-    <td><img src="/users/${
+    <td><img src="${
       product.thumbnail
-    }" alt="image" class="img-fluid img-thumbnail" style="width:100px;height:"50px;"/></td>
+    }" alt="image" style="min-width:100px;height:50px" /></td>
     <td>${product.title}</td>
     <td>${product.description.substring(0, 50)}...</td>
     <td> ₹ ${product.price}</td>
@@ -300,9 +254,7 @@ const loadAdminHomePage = () => {
     </td>
   </tr>`;
   }
-  if (productsRef) {
-    productsRef.innerHTML = body;
-  }
+  productsRef.innerHTML = body;
 };
 
 const deleteProductHandler = (id) => {
@@ -313,13 +265,6 @@ const deleteProductHandler = (id) => {
 };
 
 const addproducthandler = (id) => {
-  // id: 4,
-  //   title: "Cricket Kit Bag",
-  //   description: "Good design and flexible to use",
-  //   price: 2800,
-  //   thumbnail: "images/kitbag.png",
-  // },
-
   const nameRef = document.getElementById("name");
   const IdRef = document.getElementById("id");
   const priceRef = document.getElementById("price");
@@ -327,9 +272,7 @@ const addproducthandler = (id) => {
   const imageRef = document.getElementById("image");
 
   let products = JSON.parse(localStorage.getItem("products"));
-  // if (getRandomId) {
-  //   console.log("click");
-  // }
+
   products.push({
     id: getRandomId(),
     title: nameRef.value,
@@ -339,7 +282,6 @@ const addproducthandler = (id) => {
   });
   localStorage.setItem("products", JSON.stringify(products));
   location.href = "adminhomepage.html";
-  //console.log("click");
 };
 const loadCartPage = () => {
   const cartTableRef = document.getElementById("cartTableBody");
@@ -368,10 +310,11 @@ const loadCartPage = () => {
         total = total + parseInt(cartItem.count) * parseInt(cartItem.price);
         const count = cartItem.count * cartItem.price;
         body += `<tr>
-                  <td>${cartItem.title}</td>
-                  <td>${cartItem.count}</td>
-                  <td>${cartItem.price}</td>
+                  <td>${cartItem.id}</td>
+                  <td>${cartItem.product}</td>
                   <td>₹ ${count}</td>
+                  <td>${cartItem.price}</td>
+                  
                 </tr>`;
       }
       cartTableRef.innerHTML = body;
@@ -381,8 +324,6 @@ const loadCartPage = () => {
     }
   }
 };
-
-//loadCartPage();
 
 const checkOutHandler = () => {
   if (sessionStorage.getItem("userId")) {
