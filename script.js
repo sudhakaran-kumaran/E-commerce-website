@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
   if (location.pathname === "/home.html") {
     loadCustomerProducts();
   }
-  if (location.pathname === "/E-commerce-website/adminhomepage.html") {
+  if (location.pathname === "/adminhomepage.html") {
     loadAdminHomePage();
   }
   if (location.pathname === "/cart.html") {
@@ -197,6 +197,7 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
+if(location.pathname === '/home.html')
 loadCustomerProducts();
 
 const addToCartHandler = (id) => {
@@ -256,7 +257,9 @@ const loadAdminHomePage = () => {
   }
   productsRef.innerHTML = body;
 };
+if(location.pathname === '\adminhomepage.html')
 loadAdminHomePage();
+
 
 const deleteProductHandler = (id) => {
   const products = JSON.parse(localStorage.getItem("products"));
