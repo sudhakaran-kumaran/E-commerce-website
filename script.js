@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users1));
   }
-  if (location.pathname === "/home.html") {
+  if (location.pathname === "/E-commerce-website/home.html") {
     loadCustomerProducts();
   }
   if (location.pathname === "/adminhomepage.html") {
@@ -197,9 +197,9 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
-if(location.pathname === '/home.html'){
-loadCustomerProducts();
-}
+// if(location.pathname === '/home.html'){
+// loadCustomerProducts();
+// }
 
 const addToCartHandler = (id) => {
   let products = JSON.parse(localStorage.getItem("products"));
