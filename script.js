@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users1));
   }
-  if (location.pathname === "/E-commerce-website/home.html") {
+  if (location.pathname === "/home.html") {
     loadCustomerProducts();
   }
   if (location.pathname === "/adminhomepage.html") {
