@@ -197,7 +197,9 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
+if(location.pathname === '/home.html'){
 loadCustomerProducts();
+}
 
 const addToCartHandler = (id) => {
   let products = JSON.parse(localStorage.getItem("products"));
