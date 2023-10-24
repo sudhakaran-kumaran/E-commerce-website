@@ -174,7 +174,7 @@ const adminlogin = () => {
     erroradmin.innerText = "Invalid Crediantials";
   } else if (loggedinadmin) {
     sessionStorage.setItem("id", adminlogin.id);
-    location.replace("/E-commerce-website/adminhomepage.html");
+    location.replace("adminhomepage.html");
   }
 };
 
