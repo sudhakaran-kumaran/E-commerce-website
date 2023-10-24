@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
   if (location.pathname === "/E-commerce-website/home.html") {
     loadCustomerProducts();
   }
-  if (location.pathname === "/E-commerce-website/adminhomepage.html") {
+  if (location.pathname === "/adminhomepage.html") {
     loadAdminHomePage();
   }
   if (location.pathname === "/E-commerce-website/cart.html") {
@@ -257,8 +257,6 @@ const loadAdminHomePage = () => {
   }
   productsRef.innerHTML = body;
 };
-if(location.pathname === '\E-commerce-website\adminhomepage.html')
-loadAdminHomePage();
 
 
 const deleteProductHandler = (id) => {
