@@ -351,12 +351,12 @@ const checkOutHandler = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "/E-commerce-website/home.html";
+      location.href = "home.html";
     } else {
-      location.href = "/E-commerce-website/home.html";
+      location.href = "home.html";
     }
   } else {
-    location.href = "/E-commerce-website/login.html";
+    location.href = "login.html";
   }
 };
 const loadOrderPage = () => {
@@ -391,10 +391,10 @@ const loadOrderPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "/E-commerce-website/home.html";
+      location.href = "home.html";
     }
   } else {
-    location.href = "/E-commerce-website/login.html";
+    location.href = "login.html";
   }
 };
 const updateCartCount = () => {
@@ -413,5 +413,5 @@ const updateCartCount = () => {
         cartCountRef.innerText = `Cart - ${cartCount}`;
       } else cartCountRef.innerText = `Cart`;
     }
-  } else location.href = "/E-commerce-website/login.html";
+  } else location.href = "login.html";
 };
