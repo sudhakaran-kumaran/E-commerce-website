@@ -257,7 +257,7 @@ const loadAdminHomePage = () => {
   }
   productsRef.innerHTML = body;
 };
-// if(location.pathname === '\adminhomepage.html')
+if(location.pathname === '\E-commerce-website\adminhomepage.html')
 loadAdminHomePage();
 
 
