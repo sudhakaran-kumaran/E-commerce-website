@@ -62,16 +62,16 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users1));
   }
-  if (location.pathname === "/home.html") {
+  if (location.pathname === "/E-commerce-website/home.html") {
     loadCustomerProducts();
   }
   if (location.pathname === "/E-commerce-website/adminhomepage.html") {
     loadAdminHomePage();
   }
-  if (location.pathname === "/cart.html") {
+  if (location.pathname === "/E-commerce-website/cart.html") {
     loadCartPage();
   }
-  if (location.pathname === "/orders.html") {
+  if (location.pathname === "/E-commerce-website/orders.html") {
     loadOrderPage();
   }
 });
@@ -174,7 +174,7 @@ const adminlogin = () => {
     erroradmin.innerText = "Invalid Crediantials";
   } else if (loggedinadmin) {
     sessionStorage.setItem("id", adminlogin.id);
-    location.replace("adminhomepage.html");
+    location.replace("/E-commerce-website/adminhomepage.html");
   }
 };
 
@@ -197,7 +197,7 @@ const loadCustomerProducts = () => {
   }
   ProductRef.innerHTML = body;
 };
-if(location.pathname === '/home.html')
+
 loadCustomerProducts();
 
 const addToCartHandler = (id) => {
@@ -285,7 +285,7 @@ const addproducthandler = (id) => {
     thumbnail: imageRef.value,
   });
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "adminhomepage.html";
+  location.href = "/E-commerce-website/adminhomepage.html";
 };
 const loadCartPage = () => {
   const cartTableRef = document.getElementById("cartTableBody");
@@ -351,12 +351,12 @@ const checkOutHandler = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "home.html";
+      location.href = "/E-commerce-website/home.html";
     } else {
-      location.href = "home.html";
+      location.href = "/E-commerce-website/home.html";
     }
   } else {
-    location.href = "login.html";
+    location.href = "/E-commerce-website/login.html";
   }
 };
 const loadOrderPage = () => {
@@ -391,10 +391,10 @@ const loadOrderPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "home.html";
+      location.href = "/E-commerce-website/home.html";
     }
   } else {
-    location.href = "login.html";
+    location.href = "/E-commerce-website/login.html";
   }
 };
 const updateCartCount = () => {
@@ -413,5 +413,5 @@ const updateCartCount = () => {
         cartCountRef.innerText = `Cart - ${cartCount}`;
       } else cartCountRef.innerText = `Cart`;
     }
-  } else location.href = "login.html";
+  } else location.href = "/E-commerce-website/login.html";
 };
